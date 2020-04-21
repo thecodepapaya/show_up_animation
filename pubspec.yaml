@@ -1,7 +1,6 @@
 name: show_up_animation
 description: A flutter package to simplify implementation of "show up" animation in flutter
 version: 0.0.1
-author: Ashutosh Singh<201851029@iiitvadodara.ac.in>
 homepage: https://github.com/ashutoshsingh05/show_up_animation
 
 environment:
