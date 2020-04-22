@@ -1,6 +1,6 @@
 # show_up_animation [![Build Status](https://travis-ci.com/ashutoshsingh05/show_up_animation.svg?branch=master)](https://travis-ci.com/ashutoshsingh05/show_up_animation)
 
-A flutter package to simplify implementation of "show up" animation in flutter
+A flutter package to simplify the implementation of "show up" animation
 
 ## Getting Started
 

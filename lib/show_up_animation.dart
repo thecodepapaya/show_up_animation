@@ -1,18 +1,26 @@
-///Wrapper class to implement slide and fade animations at the same time to
-///a given element. Wrap the widget that you wish to appear with slide-fade
-///transition in this class.
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-enum Direction { vertical, horizontal }
+/// Enum to decide the axis on which to animate the [child].
+/// To changing the animation direction on the axis, consider using a negative offset.
+enum Direction {
+  /// Animate along the vertical y-axis
+  vertical,
 
+  /// Animate along the horizontal x-axis
+  horizontal,
+}
+
+/// Wrapper class to implement slide and fade animations at the same time to
+/// the [child]. Wrap the widget that you wish to make appearance with slide-fade transition
+/// or better known as the "Show Up" animation in this class.
 class ShowUpAnimation extends StatefulWidget {
-  /// The child on which to apply the given [ShowUpAnimation]
+  /// The child on which to apply the given [ShowUpAnimation].
   final Widget child;
 
   /// The offset by which to slide and [child] into view from [Direction].
-  /// Use negative value to reverse animation [direction].Defaults to 0.2
+  /// Use negative value to reverse animation [direction]. Defaults to 0.2.
   final double offset;
 
   /// The curve used to animate the [child] into view.
@@ -21,14 +29,14 @@ class ShowUpAnimation extends StatefulWidget {
 
   /// The direction from which to animate the [child] into view. [Direction.horizontal]
   /// will make the child slide on x-axis by [offset] and [Direction.vertical] on y-axis.
-  /// Defaults to [Direction.vertical]
+  /// Defaults to [Direction.vertical].
   final Direction direction;
 
   /// The delay with which to animate the [child]. Takes in a [Duration] and
-  /// defaults to 0.0 seconds
+  /// defaults to 0.0 seconds.
   final Duration delayStart;
 
-  /// The total duration in which the animation completes. Defaults to 800 milliseconds
+  /// The total duration in which the animation completes. Defaults to 800 milliseconds.
   final Duration animationDuration;
 
   ShowUpAnimation({
@@ -39,6 +47,7 @@ class ShowUpAnimation extends StatefulWidget {
     this.delayStart = const Duration(seconds: 0),
     this.animationDuration = const Duration(milliseconds: 800),
   });
+
   @override
   _ShowUpAnimationState createState() => _ShowUpAnimationState();
 }
