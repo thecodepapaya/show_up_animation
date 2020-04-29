@@ -1,5 +1,6 @@
+import 'package:example/show_up_demo.dart';
+import 'package:example/show_up_list_demo.dart';
 import 'package:flutter/material.dart';
-import 'package:show_up_animation/show_up_animation.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,89 +28,42 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final TextStyle style = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w400,
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Choose a demo"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            ShowUpAnimation(
-              child: Text(
-                'Show up Animation',
-                key: Key("Show up Animation"),
-                style: style,
-              ),
+            RaisedButton(
+              child: Text("Show Up Animation"),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ShowUpDemo();
+                    },
+                  ),
+                );
+              },
             ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              delayStart: Duration(seconds: 1),
-              child: Text(
-                'Show up Animation with delay',
-                key: Key("Show up Animation with delay"),
-                style: style,
-              ),
-            ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              delayStart: Duration(seconds: 2),
-              direction: Direction.horizontal,
-              child: Text(
-                'Direction horizontal',
-                key: Key("Direction horizontal"),
-                style: style,
-              ),
-            ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              offset: 5,
-              delayStart: Duration(seconds: 3),
-              child: Text(
-                'Large offset',
-                key: Key('Large offset'),
-                style: style,
-              ),
-            ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              offset: 5,
-              delayStart: Duration(seconds: 4),
-              direction: Direction.horizontal,
-              child: Text(
-                'Large horizontal offset',
-                key: Key('Large horizontal offset'),
-                style: style,
-              ),
-            ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              delayStart: Duration(seconds: 5),
-              curve: Curves.bounceIn,
-              direction: Direction.horizontal,
-              offset: -0.2,
-              child: Text(
-                'Curve bounceIn',
-                key: Key('Curve bounceIn'),
-                style: style,
-              ),
-            ),
-            SizedBox(height:10),
-            ShowUpAnimation(
-              animationDuration: Duration(seconds: 2),
-              delayStart: Duration(seconds: 6),
-              child: Text(
-                'Slo Mo',
-                key: Key('Slo Mo'),
-                style: style,
-              ),
+            SizedBox(height: 40),
+            RaisedButton(
+              child: Text("Show Up List"),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return ShowUpListDemo();
+                    },
+                  ),
+                );
+              },
             ),
           ],
         ),
