@@ -1,3 +1,4 @@
+import 'package:example/show_up_builder_demo.dart';
 import 'package:example/show_up_demo.dart';
 import 'package:example/show_up_list_demo.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            // SizedBox(height: 40),
+            // RaisedButton(
+            //   child: Text("Show Up Builder"),
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (BuildContext context) {
+            //           return ShowUpBuilderDemo();
+            //         },
+            //       ),
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),

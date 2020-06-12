@@ -1,3 +1,9 @@
+## [1.0.2] - 2020-06-12
+
+* Fixed broken links
+
+* Updated Readme
+
 ## [1.0.1] - 2020-04-30
 
 * Added new method `ShowUpList` to simplify creation of a list of `ShowUpAnimation` widgets

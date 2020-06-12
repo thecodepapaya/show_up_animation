@@ -1,4 +1,4 @@
-# show_up_animation [![Build Status](https://travis-ci.com/ashutoshsingh05/show_up_animation.svg?branch=master)](https://travis-ci.com/ashutoshsingh05/show_up_animation)
+# show_up_animation [![Build Status](https://travis-ci.com/thecodepapaya/show_up_animation.svg?branch=master)](https://travis-ci.com/thecodepapaya/show_up_animation)
 
 A flutter package to simplify the implementation of "show up" animation
 
@@ -8,7 +8,7 @@ Install dependencies
 
 ```yaml
 dependencies:
-  show_up_animation: ^1.0.1
+  show_up_animation: ^1.0.2
 ```
 
 Then import wherever you want to implement the animation
@@ -54,7 +54,7 @@ ShowUpList(
 
 ## Properties
 
-### ShowUpAnimation
+### ShowUpAnimation Properties
 
 You can customize how to do you want to animate your `child` using the parameters described below.
 
@@ -67,7 +67,7 @@ You can customize how to do you want to animate your `child` using the parameter
 | delayStart        | The delay with which to animate the [child]. Takes in a [Duration] and defaults to 0 seconds                                              |
 | animationDuration | The total duration in which the animation completes. Defaults to 800 milliseconds                                                         |
 
-### ShowUpList
+### ShowUpList Properties
 
 | Property          | Function                                                                                                                                  |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |

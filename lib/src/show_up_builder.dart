@@ -42,61 +42,11 @@ class ShowUpBuilder extends StatefulWidget {
   _ShowUpBuilderState createState() => _ShowUpBuilderState();
 }
 
-class _ShowUpBuilderState extends State<ShowUpBuilder>
-    with SingleTickerProviderStateMixin {
-  Animation<Offset> _animationSlide;
-
-  AnimationController _animationController;
-
-  Animation<double> _animationFade;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _animationController = AnimationController(
-  //     vsync: this,
-  //     duration: widget.animationDuration,
-  //   );
-  //   // ListView.builder(itemBuilder: (_,__){return ;});
-
-  //   //configure the animation controller as per the direction
-  //   if (widget.direction == Direction.vertical) {
-  //     _animationSlide =
-  //         Tween<Offset>(begin: Offset(0, widget.offset), end: Offset(0, 0))
-  //             .animate(CurvedAnimation(
-  //       curve: widget.curve,
-  //       parent: _animationController,
-  //     ));
-  //   } else {
-  //     _animationSlide =
-  //         Tween<Offset>(begin: Offset(widget.offset, 0), end: Offset(0, 0))
-  //             .animate(CurvedAnimation(
-  //       curve: widget.curve,
-  //       parent: _animationController,
-  //     ));
-  //   }
-
-  //   _animationFade =
-  //       Tween<double>(begin: -1.0, end: 1.0).animate(CurvedAnimation(
-  //     curve: widget.curve,
-  //     parent: _animationController,
-  //   ));
-
-  //   Timer(widget.delayStart, () {
-  //     _animationController.forward();
-  //   });
-  // }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
+class _ShowUpBuilderState extends State<ShowUpBuilder> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      // itemCount: widget.,
+      itemCount: 150,
       itemBuilder: widget.builder,
     );
   }
