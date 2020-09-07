@@ -38,7 +38,8 @@ class ShowUpAnimation extends StatefulWidget {
     this.direction = Direction.vertical,
     this.delayStart = const Duration(seconds: 0),
     this.animationDuration = const Duration(milliseconds: 800),
-  });
+    Key key,
+  }) : super(key: key);
 
   @override
   _ShowUpAnimationState createState() => _ShowUpAnimationState();
