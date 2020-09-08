@@ -1,3 +1,7 @@
+## [1.0.3] - 2020-09-8
+
+* Add key attribute to constructor
+
 ## [1.0.2] - 2020-06-12
 
 * Fixed broken links

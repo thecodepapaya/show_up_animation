@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:show_up_animation/show_up_animation.dart';
+import '../show_up_animation.dart';
 import 'show_up_builder.dart';
 import 'enums.dart';
 
