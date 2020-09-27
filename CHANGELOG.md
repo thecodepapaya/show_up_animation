@@ -1,3 +1,7 @@
+## [1.0.4] - 2020-09-27
+
+* Check isDisposed before forward call
+
 ## [1.0.3] - 2020-09-8
 
 * Add key attribute to constructor
