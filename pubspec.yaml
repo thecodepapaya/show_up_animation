@@ -1,6 +1,6 @@
 name: show_up_animation
 description: A flutter package to simplify the implementation of "show up" animation
-version: 1.0.4
+version: 2.0.0
 homepage: https://github.com/thecodepapaya/show_up_animation
 
 environment:

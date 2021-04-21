@@ -1,4 +1,3 @@
-import 'package:example/show_up_builder_demo.dart';
 import 'package:example/show_up_demo.dart';
 import 'package:example/show_up_list_demo.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               child: Text("Show Up Animation"),
               onPressed: () {
                 Navigator.of(context).push(
@@ -54,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             SizedBox(height: 40),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Show Up List"),
               onPressed: () {
                 Navigator.of(context).push(

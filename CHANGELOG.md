@@ -1,3 +1,8 @@
+## [2.0.0] - 2021-04-21
+
+* Migrate package to null safety
+* Remove deprecated classes
+
 ## [1.0.4] - 2020-09-27
 
 * Check isDisposed before forward call
