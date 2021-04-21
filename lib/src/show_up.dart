@@ -32,13 +32,13 @@ class ShowUpAnimation extends StatefulWidget {
   final Duration animationDuration;
 
   ShowUpAnimation({
-    @required this.child,
+    required this.child,
     this.offset = 0.2,
     this.curve = Curves.easeIn,
     this.direction = Direction.vertical,
     this.delayStart = const Duration(seconds: 0),
     this.animationDuration = const Duration(milliseconds: 800),
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -47,11 +47,11 @@ class ShowUpAnimation extends StatefulWidget {
 
 class _ShowUpAnimationState extends State<ShowUpAnimation>
     with SingleTickerProviderStateMixin {
-  Animation<Offset> _animationSlide;
+  late Animation<Offset> _animationSlide;
 
-  AnimationController _animationController;
+  AnimationController? _animationController;
 
-  Animation<double> _animationFade;
+  late Animation<double> _animationFade;
 
   bool _isDisposed = false;
 
@@ -72,25 +72,25 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
             Tween<Offset>(begin: Offset(0, widget.offset), end: Offset(0, 0))
                 .animate(CurvedAnimation(
           curve: widget.curve,
-          parent: _animationController,
+          parent: _animationController!,
         ));
       } else {
         _animationSlide =
             Tween<Offset>(begin: Offset(widget.offset, 0), end: Offset(0, 0))
                 .animate(CurvedAnimation(
           curve: widget.curve,
-          parent: _animationController,
+          parent: _animationController!,
         ));
       }
 
       _animationFade =
           Tween<double>(begin: -1.0, end: 1.0).animate(CurvedAnimation(
         curve: widget.curve,
-        parent: _animationController,
+        parent: _animationController!,
       ));
 
       Timer(widget.delayStart, () {
-        if (_animationController != null && !_isDisposed) _animationController.forward();
+        if (_animationController != null && !_isDisposed) _animationController!.forward();
       });
     }
   }
@@ -98,7 +98,7 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
   @override
   void dispose() {
     _isDisposed = true;
-    _animationController.dispose();
+    _animationController!.dispose();
     super.dispose();
   }
 

@@ -38,7 +38,7 @@ class ShowUpList extends StatefulWidget {
   final bool enableLazyLoading;
 
   ShowUpList({
-    @required this.children,
+    required this.children,
     this.offset = 0.2,
     this.curve = Curves.easeIn,
     this.direction = Direction.vertical,
@@ -52,7 +52,7 @@ class ShowUpList extends StatefulWidget {
 }
 
 class _ShowUpListState extends State<ShowUpList> {
-  List<Widget> _animatedChildren;
+  late List<Widget?> _animatedChildren;
 
   @override
   void initState() {
@@ -61,7 +61,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return;
     } else {
       int _length = widget.children.length;
-      _animatedChildren = List<Widget>(_length);
+      _animatedChildren = <Widget?>[];
       for (int i = 0; i < _length; i++) {
         _animatedChildren[i] = ShowUpAnimation(
           child: widget.children[i],
@@ -94,7 +94,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return Column(
         mainAxisSize: MainAxisSize.min,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _animatedChildren,
+        children: _animatedChildren as List<Widget>,
       );
   }
 }

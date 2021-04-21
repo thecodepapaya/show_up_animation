@@ -30,7 +30,7 @@ class ShowUpBuilder extends StatefulWidget {
   final Duration animationDuration;
 
   ShowUpBuilder({
-    @required this.builder,
+    required this.builder,
     this.offset = 0.2,
     this.curve = Curves.easeIn,
     this.direction = Direction.vertical,
