@@ -90,7 +90,8 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
       ));
 
       Timer(widget.delayStart, () {
-        if (_animationController != null && !_isDisposed) _animationController!.forward();
+        if (_animationController != null && !_isDisposed)
+          _animationController!.forward();
       });
     }
   }

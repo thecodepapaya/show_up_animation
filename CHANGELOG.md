@@ -1,4 +1,4 @@
-## [2.0.0] - 2021-04-21
+## [2.0.0-nullsafety.0] - 2021-04-21
 
 * Migrate package to null safety
 * Remove deprecated classes
