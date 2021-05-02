@@ -31,7 +31,7 @@ class ShowUpAnimation extends StatefulWidget {
   /// The total duration in which the animation completes. Defaults to 800 milliseconds.
   final Duration animationDuration;
 
-  /// The value sets the `from` value of the fade animation controller.
+  /// The value sets the begin value of the fade animation.
   final double fadeBegin;
   
   ShowUpAnimation({
