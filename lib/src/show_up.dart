@@ -31,6 +31,9 @@ class ShowUpAnimation extends StatefulWidget {
   /// The total duration in which the animation completes. Defaults to 800 milliseconds.
   final Duration animationDuration;
 
+  /// The value sets the `from` value of the fade animation controller.
+  final double fadeBegin;
+  
   ShowUpAnimation({
     required this.child,
     this.offset = 0.2,
@@ -38,6 +41,7 @@ class ShowUpAnimation extends StatefulWidget {
     this.direction = Direction.vertical,
     this.delayStart = const Duration(seconds: 0),
     this.animationDuration = const Duration(milliseconds: 800),
+    this.fadeBegin = -1.0,
     Key? key,
   }) : super(key: key);
 
@@ -84,7 +88,7 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
       }
 
       _animationFade =
-          Tween<double>(begin: -1.0, end: 1.0).animate(CurvedAnimation(
+          Tween<double>(begin: widget.fadeBegin, end: 1.0).animate(CurvedAnimation(
         curve: widget.curve,
         parent: _animationController!,
       ));
