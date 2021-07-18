@@ -107,7 +107,7 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
   @override
   void dispose() {
     _isDisposed = true;
-    _animationController!.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
