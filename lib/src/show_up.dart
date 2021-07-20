@@ -121,7 +121,7 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
     Widget child = widget.child;
     if (widget.enableSlideAnimation && _animationSlide != null)
       child = SlideTransition(
-        position: _animationSlide,
+        position: _animationSlide!,
         child: child,
       );
     return FadeTransition(
