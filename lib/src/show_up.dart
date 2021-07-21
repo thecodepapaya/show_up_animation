@@ -31,6 +31,13 @@ class ShowUpAnimation extends StatefulWidget {
   /// The total duration in which the animation completes. Defaults to 800 milliseconds.
   final Duration animationDuration;
 
+  /// The value sets the `from` value of the fade animation controller.
+  final double fadeBegin;
+
+  final bool enableSlideAnimation;
+
+  final Animation<double>? fadeAnimation;
+
   ShowUpAnimation({
     required this.child,
     this.offset = 0.2,
@@ -38,6 +45,9 @@ class ShowUpAnimation extends StatefulWidget {
     this.direction = Direction.vertical,
     this.delayStart = const Duration(seconds: 0),
     this.animationDuration = const Duration(milliseconds: 800),
+    this.fadeBegin = -1.0,
+    this.enableSlideAnimation = true,
+    this.fadeAnimation,
     Key? key,
   }) : super(key: key);
 
@@ -47,7 +57,7 @@ class ShowUpAnimation extends StatefulWidget {
 
 class _ShowUpAnimationState extends State<ShowUpAnimation>
     with SingleTickerProviderStateMixin {
-  late Animation<Offset> _animationSlide;
+  Animation<Offset>? _animationSlide;
 
   AnimationController? _animationController;
 
@@ -66,28 +76,31 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
         duration: widget.animationDuration,
       );
 
-      //configure the animation controller as per the direction
-      if (widget.direction == Direction.vertical) {
-        _animationSlide =
-            Tween<Offset>(begin: Offset(0, widget.offset), end: Offset(0, 0))
-                .animate(CurvedAnimation(
-          curve: widget.curve,
-          parent: _animationController!,
-        ));
-      } else {
-        _animationSlide =
-            Tween<Offset>(begin: Offset(widget.offset, 0), end: Offset(0, 0))
-                .animate(CurvedAnimation(
-          curve: widget.curve,
-          parent: _animationController!,
-        ));
+      if (widget.enableSlideAnimation) {
+        //configure the animation controller as per the direction
+        if (widget.direction == Direction.vertical) {
+          _animationSlide =
+              Tween<Offset>(begin: Offset(0, widget.offset), end: Offset(0, 0))
+                  .animate(CurvedAnimation(
+                curve: widget.curve,
+                parent: _animationController!,
+              ));
+        } else {
+          _animationSlide =
+              Tween<Offset>(begin: Offset(widget.offset, 0), end: Offset(0, 0))
+                  .animate(CurvedAnimation(
+                curve: widget.curve,
+                parent: _animationController!,
+              ));
+        }
       }
 
-      _animationFade =
-          Tween<double>(begin: -1.0, end: 1.0).animate(CurvedAnimation(
-        curve: widget.curve,
-        parent: _animationController!,
-      ));
+      _animationFade = widget.fadeAnimation ??
+          Tween<double>(begin: widget.fadeBegin, end: 1.0).animate(
+              CurvedAnimation(
+                curve: widget.curve,
+                parent: _animationController!,
+              ));
 
       Timer(widget.delayStart, () {
         if (_animationController != null && !_isDisposed)
@@ -99,18 +112,21 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
   @override
   void dispose() {
     _isDisposed = true;
-    _animationController!.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget child = widget.child;
+    if (widget.enableSlideAnimation && _animationSlide != null)
+      child = SlideTransition(
+        position: _animationSlide!,
+        child: child,
+      );
     return FadeTransition(
       opacity: _animationFade,
-      child: SlideTransition(
-        position: _animationSlide,
-        child: widget.child,
-      ),
+      child: child,
     );
   }
 }
