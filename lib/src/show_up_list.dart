@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../show_up_animation.dart';
 import 'show_up_builder.dart';
-import 'enums.dart';
 
 /// Wrapper class to simplify the use of multiple [ShowUpAnimation] for a list of widgets.
 /// Supply all the children that you wish to animate to the widget as a list of widgets.
@@ -52,7 +52,7 @@ class ShowUpList extends StatefulWidget {
 }
 
 class _ShowUpListState extends State<ShowUpList> {
-  late List<Widget?> _animatedChildren;
+  late List<Widget> _animatedChildren;
 
   @override
   void initState() {
@@ -61,15 +61,17 @@ class _ShowUpListState extends State<ShowUpList> {
       return;
     } else {
       int _length = widget.children.length;
-      _animatedChildren = <Widget?>[];
+      _animatedChildren = [];
       for (int i = 0; i < _length; i++) {
-        _animatedChildren[i] = ShowUpAnimation(
-          child: widget.children[i],
-          animationDuration: widget.animationDuration,
-          curve: widget.curve,
-          offset: widget.offset,
-          direction: widget.direction,
-          delayStart: widget.delayBetween * (i + 1),
+        _animatedChildren.add(
+          ShowUpAnimation(
+            child: widget.children[i],
+            animationDuration: widget.animationDuration,
+            curve: widget.curve,
+            offset: widget.offset,
+            direction: widget.direction,
+            delayStart: widget.delayBetween * (i + 1),
+          ),
         );
       }
     }
@@ -94,7 +96,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return Column(
         mainAxisSize: MainAxisSize.min,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _animatedChildren as List<Widget>,
+        children: _animatedChildren,
       );
   }
 }
