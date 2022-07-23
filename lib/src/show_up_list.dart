@@ -52,7 +52,7 @@ class ShowUpList extends StatefulWidget {
 }
 
 class _ShowUpListState extends State<ShowUpList> {
-  List<Widget?> _animatedChildren = [];
+  late List<Widget> _animatedChildren;
 
   @override
   void initState() {
@@ -60,7 +60,9 @@ class _ShowUpListState extends State<ShowUpList> {
     if (widget.enableLazyLoading) {
       return;
     } else {
-      for (int i = 0; i < widget.children.length; i++) {
+      int _length = widget.children.length;
+      _animatedChildren = [];
+      for (int i = 0; i < _length; i++) {
         _animatedChildren.add(
           ShowUpAnimation(
             child: widget.children[i],
@@ -94,7 +96,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return Column(
         mainAxisSize: MainAxisSize.min,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _animatedChildren as List<Widget>,
+        children: _animatedChildren,
       );
   }
 }
