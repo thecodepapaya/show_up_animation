@@ -1,3 +1,7 @@
+## [2.1.0] - 2025-02-23
+
+* Bump dependencies
+
 ## [2.0.0] - 2021-05-13
 
 * Migrate package to null safety

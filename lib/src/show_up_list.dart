@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import '../show_up_animation.dart';
 import 'show_up_builder.dart';
-import 'enums.dart';
 
 /// Wrapper class to simplify the use of multiple [ShowUpAnimation] for a list of widgets.
 /// Supply all the children that you wish to animate to the widget as a list of widgets.
 ///
-/// Use if the number of [children] widgets are not huge as it may have performace impacts
-/// on the application. If the count of children is likely to exceed a few hundreads,
+/// Use if the number of [children] widgets are not huge as it may have performance impacts
+/// on the application. If the count of children is likely to exceed a few hundreds,
 /// consider using [ShowUpBuilder].
 class ShowUpList extends StatefulWidget {
   /// The list of children on which to apply the [ShowUpAnimation] in a series, one
@@ -28,7 +27,7 @@ class ShowUpList extends StatefulWidget {
   final Direction direction;
 
   /// The delay between animating each [children] into view. The delay is equally
-  /// divided into all the chidren. Takes in a [Duration] and defaults to 300 milliseconds.
+  /// divided into all the children. Takes in a [Duration] and defaults to 300 milliseconds.
   final Duration delayBetween;
 
   /// The total duration in which the animation of each child completes. Defaults to 500 milliseconds.
@@ -52,7 +51,7 @@ class ShowUpList extends StatefulWidget {
 }
 
 class _ShowUpListState extends State<ShowUpList> {
-  late List<Widget?> _animatedChildren;
+  late List<Widget> _animatedChildren;
 
   @override
   void initState() {
@@ -61,7 +60,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return;
     } else {
       int _length = widget.children.length;
-      _animatedChildren = <Widget?>[];
+      _animatedChildren = <Widget>[];
       for (int i = 0; i < _length; i++) {
         _animatedChildren[i] = ShowUpAnimation(
           child: widget.children[i],
@@ -94,7 +93,7 @@ class _ShowUpListState extends State<ShowUpList> {
       return Column(
         mainAxisSize: MainAxisSize.min,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _animatedChildren as List<Widget>,
+        children: _animatedChildren,
       );
   }
 }
