@@ -8,7 +8,7 @@ Install dependencies
 
 ```yaml
 dependencies:
-  show_up_animation: ^1.0.2
+  show_up_animation: ^2.1.0
 ```
 
 Then import wherever you want to implement the animation
