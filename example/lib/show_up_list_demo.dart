@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 
 class ShowUpListDemo extends StatelessWidget {
+  const ShowUpListDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(this.toStringShort()),
+        title: Text(toStringShort()),
       ),
       body: Center(
         // child: SingleChildScrollView(
         child: ShowUpList(
           enableLazyLoading: true,
           direction: Direction.horizontal,
-          animationDuration: Duration(milliseconds: 1500),
-          delayBetween: Duration(milliseconds: 1500),
+          animationDuration: const Duration(milliseconds: 1500),
+          delayBetween: const Duration(milliseconds: 1500),
           offset: -0.2,
           children: <Widget>[
             for (int i = 0; i < 10; i++)
@@ -22,12 +24,12 @@ class ShowUpListDemo extends StatelessWidget {
                 semanticContainer: true,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 elevation: 8,
-                shape: RoundedRectangleBorder(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
                 ),
-                margin: EdgeInsets.all(8),
+                margin: const EdgeInsets.all(8),
                 child: Image.asset(
                   "assets/flower.jpg",
                   // height: 200,

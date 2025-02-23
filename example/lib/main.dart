@@ -1,25 +1,27 @@
-import 'package:example/show_up_demo.dart';
-import 'package:example/show_up_list_demo.dart';
+import 'show_up_demo.dart';
+import 'show_up_list_demo.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   final String title = "Show up Demo";
+
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: this.title,
+      title: title,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: this.title),
+      home: MyHomePage(title: title),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -32,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Choose a demo"),
+        title: const Text("Choose a demo"),
       ),
       body: Center(
         child: Column(
@@ -41,25 +43,25 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              child: Text("Show Up Animation"),
+              child: const Text("Show Up Animation"),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ShowUpDemo();
+                      return const ShowUpDemo();
                     },
                   ),
                 );
               },
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             ElevatedButton(
-              child: Text("Show Up List"),
+              child: const Text("Show Up List"),
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (BuildContext context) {
-                      return ShowUpListDemo();
+                      return const ShowUpListDemo();
                     },
                   ),
                 );
