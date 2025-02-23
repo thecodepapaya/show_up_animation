@@ -82,29 +82,30 @@ class _ShowUpAnimationState extends State<ShowUpAnimation>
           _animationSlide =
               Tween<Offset>(begin: Offset(0, widget.offset), end: Offset(0, 0))
                   .animate(CurvedAnimation(
-                curve: widget.curve,
-                parent: _animationController!,
-              ));
+            curve: widget.curve,
+            parent: _animationController!,
+          ));
         } else {
           _animationSlide =
               Tween<Offset>(begin: Offset(widget.offset, 0), end: Offset(0, 0))
                   .animate(CurvedAnimation(
-                curve: widget.curve,
-                parent: _animationController!,
-              ));
+            curve: widget.curve,
+            parent: _animationController!,
+          ));
         }
       }
 
       _animationFade = widget.fadeAnimation ??
-          Tween<double>(begin: widget.fadeBegin, end: 1.0).animate(
-              CurvedAnimation(
-                curve: widget.curve,
-                parent: _animationController!,
-              ));
+          Tween<double>(begin: widget.fadeBegin, end: 1.0)
+              .animate(CurvedAnimation(
+            curve: widget.curve,
+            parent: _animationController!,
+          ));
 
       Timer(widget.delayStart, () {
-        if (_animationController != null && !_isDisposed)
+        if (_animationController != null && !_isDisposed) {
           _animationController!.forward();
+        }
       });
     }
   }
