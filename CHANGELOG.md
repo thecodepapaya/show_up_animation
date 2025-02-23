@@ -1,3 +1,7 @@
+## [2.1.1] - 2025-02-23
+
+* Bump dependencies and update LICENSE
+
 ## [2.1.0] - 2025-02-23
 
 * Bump dependencies

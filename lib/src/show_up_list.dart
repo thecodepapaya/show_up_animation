@@ -45,7 +45,7 @@ class ShowUpList extends StatefulWidget {
     this.enableLazyLoading = false,
     this.delayBetween = const Duration(milliseconds: 300),
     this.animationDuration = const Duration(milliseconds: 500),
-  }) : assert(children.length > 0);
+  }) : assert(children.isNotEmpty);
 
   @override
   _ShowUpListState createState() => _ShowUpListState();
