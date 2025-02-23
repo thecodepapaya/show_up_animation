@@ -92,11 +92,12 @@ class _ShowUpListState extends State<ShowUpList> {
               offset: widget.offset,
             );
           });
-    } else
+    } else {
       return Column(
         mainAxisSize: MainAxisSize.min,
         // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: _animatedChildren,
       );
+    }
   }
 }

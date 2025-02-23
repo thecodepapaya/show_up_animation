@@ -1,3 +1,7 @@
+## [2.1.2] - 2025-02-23
+
+* Fix static analysis warnings
+
 ## [2.1.1] - 2025-02-23
 
 * Bump dependencies and update LICENSE
