@@ -8,7 +8,7 @@ Install dependencies
 
 ```yaml
 dependencies:
-  show_up_animation: ^2.1.0
+  show_up_animation: ^2.1.1
 ```
 
 Then import wherever you want to implement the animation
@@ -80,5 +80,5 @@ You can customize how to do you want to animate your `child` using the parameter
 
 ## Demo
 
-![videotogif_2020 04 21_19 44 01](https://user-images.githubusercontent.com/42690541/79876554-d2d4fd00-8408-11ea-9b8e-550954f618f3.gif)
-![videotogif_2020 04 30_04 07 18](https://user-images.githubusercontent.com/42690541/80653893-c3088900-8a98-11ea-818a-27c55aa53789.gif)
+<img src=https://github.com/user-attachments/assets/9e4d5340-1374-482e-a669-2ad4bc44246d alt="Text demo" width="300">
+<img src=https://github.com/user-attachments/assets/0ab08965-fe45-40e6-8e41-46892af73df2 alt="Show up list demo" width="300">
